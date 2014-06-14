@@ -1,0 +1,11 @@
+== RooMr
+
+* Ruby version  => ruby 2.1.2p95 (2014-05-08 revision 45877) [x86_64-linux]
+
+* Configuration => if you add a gem you must call <tt>bundle install</tt>
+
+* Database migration => <tt>rake db:migrate</tt>
+
+* Services => puma, devise (user-auth)
+
+* Deployment instructions => puma -C config/puma.rb [-d] (-d makes daemon kinda nice sometimes but no logs) 
