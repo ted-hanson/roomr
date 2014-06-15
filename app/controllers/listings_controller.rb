@@ -1,4 +1,33 @@
 class ListingsController < ApplicationController
+  
+  def new_searchers_interested
+    # return true if there's a new searcher interested
+  end
+  
+  def view_searchers
+    # get current listing id -> then get the interested user from the user_id
+    # if there is an interested user NOT in the ListerResponse table, then it's new!
+    @mylisting_id = current_user.listings[0].id
+    @interested_users = Array.new
+    
+    puts "my listing id: "
+    puts @mylisting_id
+    
+    UserResponse.where(listing_id: @mylisting_id).each do |one_user_response| 
+      puts "each user response"
+      # puts one_user_response.user_id
+      puts User.find(one_user_response.user_id)
+      @interested_users.push(User.find(one_user_response.user_id))
+    end
+    
+    # puts @interested_users
+
+    # respond_to do |format|
+    # format.html # index.html.erb
+
+    
+
+  end
 
   def index
     @listings = Listing.all
