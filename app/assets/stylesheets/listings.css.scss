@@ -101,15 +101,25 @@
 
 #interested-users {
   li {
+    margin: 10px;
+    padding: 10px;
+    border-bottom: 1px solid lightgray;
     img {
       width: 70px;
       float: left;
+      margin-right: 10px;
     }
-    > div {
+    > a {
+      display: block;
       overflow: hidden;
-      margin-left: 10px;
-      .interested-users-actions {
-        margin-top: 7px;
+    }
+    > a > div {
+      overflow: hidden;
+      .green-value {
+        color: #7EC346;
+      }
+      > div {
+        margin-bottom: 5px;
       }
     }
   }
