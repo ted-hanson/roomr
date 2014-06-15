@@ -68,7 +68,7 @@ class ListingsController < ApplicationController
     # puts params[:id]
 
     user_response = UserResponse.create(response: true)
-    user_response.listing = Listing.find(params[:id].to_i)
+    user_response.listing = Listing.find(params[:id])
     user_response.user = User.find(current_user.id)
     user_response.save
     
@@ -80,7 +80,7 @@ class ListingsController < ApplicationController
     # puts params[:id]
 
     user_response = UserResponse.create(response: false)
-    user_response.listing = Listing.find(params[:id].to_i)
+    user_response.listing = Listing.find(params[:id])
     user_response.user = User.find(current_user.id)
     user_response.save
     
