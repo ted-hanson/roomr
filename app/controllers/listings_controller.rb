@@ -9,17 +9,34 @@ class ListingsController < ApplicationController
   end
 
   def new
+    puts "current user is:"
+    puts current_user
+    @listing = Listing.new({user_id: current_user.id})
+    puts "listing in new is:"
+    puts @listing
   end
   
   def create
-    @listing = Listing.new(listing_params)
+    puts "listings is:"
+    puts listing_params
 
+    @listing = current_user.listings.build(listing_params)
+    
     @listing.save
     redirect_to @listing
   end
-
+  
+  def mylisting
+    if current_user.listings.length == 0
+      redirect_to '/listings/new'
+    else
+      redirect_to current_user.listings[0]
+    end
+  end
+  
   def show
     @listing = Listing.find(params[:id])
+    @photos = getImages
   end
   
   def edit
@@ -39,6 +56,16 @@ class ListingsController < ApplicationController
   private
   def listing_params
     params.require(:listing).permit!
+  end
+  
+  def current_user
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+  end
+
+  def getImages
+    @photos = []
+    @photos.push(@listing.photos)
+    return @photos
   end
 
 end

@@ -28,6 +28,9 @@ gem 'spring',        group: :development
 # user puma as the app server
 gem 'puma'
 
+# rails debugging
+gem 'pry'
+
 # omniauth for facebook
 gem 'omniauth'
 gem 'omniauth-facebook', '1.4.0'

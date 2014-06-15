@@ -8,10 +8,13 @@
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
 </head>
 <body class="<%= @body_class %>">
+  <% unless current_user.nil? %>
   <header>
       <div id="menu_nav_button"></div>
       <a class="header-logo" href="/"><%= image_tag "header-logo@2x.png" %></a>
-  </header>
+  </header>  
+  <% end %> 
+
   <%= yield %>
 
 

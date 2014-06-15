@@ -1,13 +1,27 @@
-<h1>View the Listing!!!</h1>
+<div class='title'><%= @listing.title %></div>
+<div class='gallery'>
+	<div class='main-image'>
+		<div class='img-wrapper'><%= image_tag(@photos[0])%></div>
+	</div>
+	<div class='thumbnails'>
+		<% @photos.each do |image_uri| %>
+			<div class='img-wrapper'><%= image_tag(image_uri)%></div>
+		<% end %>
+	</div>
+</div>
+<div class='map'>
+	<div class='neighborhood'><%= @listing.neighborhood %></div>
+	<%= image_tag("http://fc02.deviantart.net/fs70/i/2013/111/f/5/halo_reach_wallpaper_by_aro_by_aroart-d62gx5e.jpg") %>
+</div>
+<div class='description'>
+	<%= content_tag(:div, @listing.description) %>
+</div>
 
-<div><%= @listing.title %></div>
-<div><%= @listing.description %></div>
-<div><%= @listing.neighborhood %></div>
-<div><%= @listing.dateavailable_month %></div>
-<div><%= @listing.dateavailable_day %></div>
-<div><%= @listing.dateavailable_year %></div>
-<div><%= @listing.numbedrooms %></div>
-<div><%= @listing.numbathrooms %></div>
-<div><%= @listing.price %></div>
-<div><%= @listing.photos %></div>
-
+<% if current_user.id != @listing.user_id %>
+<div class='match-grade-wrapper'>
+	<span class='match-grade-label'>Match grade</span>
+  <span id='match-grade'>F</span>
+</div>
+<% end %>
+<div class=''>
+</div>
