@@ -16,7 +16,14 @@
 	}
 }
 
-.main-image img, .map img {
+.main-image {
+	height: 200px;
+	overflow: hidden;
+}
+.main-image img {
+	width: 100%;
+}
+.map img {
 	width: auto;
 }
 .gallery {
