@@ -1,5 +1,15 @@
 class ListingsController < ApplicationController
 
+  def imgur_upload
+    # POST to https://api.imgur.com/3/image
+    # use the Auth header below in the request
+    # Authorization: Client-ID YOUR_CLIENT_ID
+    # clientid is e8a61e610fab42c
+    # Key is "image": A binary file, base64 data, or a URL for an image
+    # Key is "type": The type of the file that's being sent; file, base64 or URL [optional]
+    # https://api.imgur.com/endpoints/image#image-upload
+  end
+
   def index
     @listings = Listing.all
       respond_to do |format|

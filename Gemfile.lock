@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/dncrht/imgur.git
+  revision: 61ca22b6fa83d58e4038563226614da2bd103325
+  specs:
+    imgur (1.0.1)
+      json (>= 1.6.4)
+      oauth (>= 0.4.5)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -62,6 +70,7 @@ GEM
     minitest (5.3.4)
     multi_json (1.10.1)
     multipart-post (2.0.0)
+    oauth (0.4.7)
     oauth2 (0.8.1)
       faraday (~> 0.8)
       httpauth (~> 0.1)
@@ -144,6 +153,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
+  imgur!
   jbuilder (~> 2.0)
   jquery-rails
   omniauth

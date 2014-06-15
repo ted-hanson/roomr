@@ -35,6 +35,9 @@ gem 'pry'
 gem 'omniauth'
 gem 'omniauth-facebook', '1.4.0'
 
+# imgur api
+gem 'imgur', :git => 'git://github.com/dncrht/imgur.git'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
