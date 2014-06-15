@@ -115,6 +115,46 @@ class ListingsController < ApplicationController
       render :action => 'edit'
     end
   end
+
+  def map
+    @testing = Listing.all
+    @unavailable_listing_ids = Array.new
+    
+    # listing ids this user has already responded to
+    UserResponse.where(user_id: current_user.id).each do |previous_response|
+      @unavailable_listing_ids.push(previous_response.listing_id)
+    end
+    
+    # this users own listing(s)
+    User.find(current_user.id).listings.each do |posted_listing|
+      @unavailable_listing_ids.push(posted_listing.id)
+    end
+    
+    # the next available listing is 
+    # 1) NOT the user's own listing
+    # and 2) NOT a listing this user has responded to
+    @listings = Listing.where.not(id: @unavailable_listing_ids)
+    
+    puts @listings
+
+    @hash = []
+    @listings.each do |list|
+      @marker = {}
+      @marker[:lat] = list.latitude
+      @marker[:lng] = list.longitude
+      @marker[:picture] = {
+        "url" => "https://addons.cdn.mozilla.net/img/uploads/addon_icons/13/13028-64.png",
+        "width" =>  36,
+        "height" => 36
+      }
+      @hash.push(@marker)
+    end
+    # @hash = Gmaps4rails.build_markers(@listings) do |list, marker|
+    #   marker.lat list.latitude
+    #   marker.lng list.longitude
+    # end
+          # binding.pry
+  end
   
   def interested
     # puts "interested params: "

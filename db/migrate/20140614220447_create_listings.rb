@@ -3,6 +3,8 @@ class CreateListings < ActiveRecord::Migration
     create_table :listings do |t|
       t.string :title
       t.text :description
+      t.string :latitude
+      t.string :longitude
       t.text :neighborhood
       t.integer :dateavailable_month
       t.integer :dateavailable_day
