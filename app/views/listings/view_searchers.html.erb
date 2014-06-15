@@ -1,0 +1,22 @@
+<h1>People Interested in Your Room!</h1>
+
+<% if @interested_users.blank? %>
+<p>No users are currently interested</p>
+
+<% else %>
+    <ul id="interested-users">
+    <% @interested_users.each do |user| %>
+    <li>
+      <%= image_tag(user.photo)%>
+      <div>
+      <span><%= user.first_name -%><%= user.last_name -%></span>
+      <div class="interested-users-actions">
+      <a href= 'mailto: <%= user.email  -%>'>EMail</a>
+      <a href= '/listings/declineuser'>Decline</a>
+      <a href= '/listings/fbchat'>FB Chat</a>
+      </div>
+      </div>
+    </li>
+    <% end %>
+</ul>
+<% end %>

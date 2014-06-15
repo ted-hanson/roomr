@@ -98,3 +98,19 @@
 		color: white;
 	}
 }
+
+#interested-users {
+  li {
+    img {
+      width: 70px;
+      float: left;
+    }
+    > div {
+      overflow: hidden;
+      margin-left: 10px;
+      .interested-users-actions {
+        margin-top: 7px;
+      }
+    }
+  }
+}
