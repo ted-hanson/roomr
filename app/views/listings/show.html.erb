@@ -76,8 +76,8 @@
 </div>
 <% if current_user.id != @listing.user_id %>
 <div class='match-grade-wrapper'>
-	<span class='match-grade-label'>Match grade</span>
-  <span id='match-grade'>F</span>
+	<span class='match-grade-label'>Match grade: </span>
+  <span id='match-grade'><%= @listing.match_grade %></span>
 </div>
 <% end %>
 <div class='about-us-roomrs'>

@@ -13,6 +13,7 @@ class CreateListings < ActiveRecord::Migration
       t.integer :numbedrooms
       t.integer :numbathrooms
       t.text :photos
+      t.text :match_grade
       t.references :user, index: true
 
       t.timestamps

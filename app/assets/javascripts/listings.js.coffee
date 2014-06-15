@@ -8,4 +8,4 @@ randomGrade = letters[Math.floor(Math.random() * letters.length)]
 console.log(randomGrade)
 
 $(document).ready ->
-	$('#match-grade').text(randomGrade)	
+	#$('#match-grade').text(randomGrade)	

@@ -117,6 +117,7 @@ class ListingsController < ApplicationController
   end
 
   def map
+    letters = ['A+', 'A', 'A-', 'B+', 'B', 'B-', 'C+', 'C', 'C-', 'D+', 'D', 'D-', 'F']
     @testing = Listing.all
     @unavailable_listing_ids = Array.new
     
@@ -140,13 +141,26 @@ class ListingsController < ApplicationController
     @hash = []
     @listings.each do |list|
       @marker = {}
+      @marker[:id] = list.id
       @marker[:lat] = list.latitude
       @marker[:lng] = list.longitude
+      # if list.match_grade 
       @marker[:picture] = {
-        "url" => "https://addons.cdn.mozilla.net/img/uploads/addon_icons/13/13028-64.png",
         "width" =>  36,
         "height" => 36
       }
+      @marker[:info] = "<div class='room'>
+      <div class='room-profile img-wrapper'>
+        <img src='" + list.photos + "'>
+      </div>
+      <div class='room-details'>
+        <div class='room-title'>" + list.title + "</div>
+        <div class='room-description'><div class='price'>
+    <span class='price-dollars'>$" + list.price.to_s + "</span>
+    <span class='price-per-unit'>/month</span>
+  </div></div>
+      </div>
+    </div>"
       @hash.push(@marker)
     end
     # @hash = Gmaps4rails.build_markers(@listings) do |list, marker|

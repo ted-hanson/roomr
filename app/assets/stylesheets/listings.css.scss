@@ -15,6 +15,10 @@
 		margin: 10px 15px;
 	}
 }
+.title .neighborhood, .price .price-per-unit {
+	color: #888;
+	font-size: 13px;
+}
 
 .main-image {
 	overflow: hidden;
@@ -125,4 +129,24 @@
       }
     }
   }
+}
+.room {
+	overflow: hidden;
+}
+.room-profile {
+	width: 100px;
+	height: 100px;
+	overflow: hidden;
+	border-radius: 50%;
+	border: 1px solid #ccc;
+	display: inline-block;
+	margin: 10px 20px;
+	float: left;
+	img {
+		width: auto;
+		height: 100%;
+	}
+}
+.room-details {
+	margin: 30px;
 }
