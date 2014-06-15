@@ -29,6 +29,8 @@ ActiveRecord::Schema.define(version: 20140614220447) do
     t.datetime "updated_at"
   end
 
+  add_index "listings", ["user_id"], name: "index_listings_on_user_id"
+
   create_table "users", force: true do |t|
     t.string   "provider"
     t.string   "uid"
@@ -43,6 +45,7 @@ ActiveRecord::Schema.define(version: 20140614220447) do
     t.string   "interests"
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
+    t.integer  "listing_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
