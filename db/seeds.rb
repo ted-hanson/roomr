@@ -19,6 +19,6 @@ sampleListing = Listing.create([
 		numbedrooms: 1,
 		numbathrooms: 0,
 		price: 100000000000,
-		photos: "http://trampt.com/images/products/000/019/203/Halo_Master_Chief-Funko-Pop_Vinyl-Funko-trampt-19203m.jpg?1321569370"
+		photos: "http://i.imgur.com/kqgJ525.jpg?1"
 	}
 ])
