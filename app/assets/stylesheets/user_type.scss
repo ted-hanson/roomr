@@ -1,6 +1,9 @@
 .user-type {
   header {
-    opacity:.2;
+//    opacity:.2;
+    #menu_nav_button {
+      display: none;
+    }
   }
 }
 .user-room1 {

@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get 'mylisting' => 'listings#mylisting'
   get 'listings/interested' => 'listings#interested'
   get 'listings/notinterested' => 'listings#notinterested'
+  get 'listings/view_searchers' => 'listings#view_searchers'
+  get 'listings/fbchat' => 'listings#fbchat'
   resources :listings
 
   resources :users

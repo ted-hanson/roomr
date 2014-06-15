@@ -98,3 +98,29 @@
 		color: white;
 	}
 }
+
+#interested-users {
+  li {
+    margin: 10px;
+    padding: 10px;
+    border-bottom: 1px solid lightgray;
+    img {
+      width: 70px;
+      float: left;
+      margin-right: 10px;
+    }
+    > a {
+      display: block;
+      overflow: hidden;
+    }
+    > a > div {
+      overflow: hidden;
+      .green-value {
+        color: #7EC346;
+      }
+      > div {
+        margin-bottom: 5px;
+      }
+    }
+  }
+}
