@@ -11,7 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140614204312) do
+ActiveRecord::Schema.define(version: 20140614220447) do
+
+  create_table "listings", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.text     "neighborhood"
+    t.integer  "dateavailable_month"
+    t.integer  "dateavailable_day"
+    t.integer  "dateavailable_year"
+    t.integer  "price"
+    t.integer  "numbedrooms"
+    t.integer  "numbathrooms"
+    t.text     "photos"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "provider"
