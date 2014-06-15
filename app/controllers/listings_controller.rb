@@ -36,6 +36,7 @@ class ListingsController < ApplicationController
   
   def show
     @listing = Listing.find(params[:id])
+    @photos = getImages
   end
   
   def edit
@@ -59,6 +60,12 @@ class ListingsController < ApplicationController
   
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
+  end
+
+  def getImages
+    @photos = []
+    @photos.push(@listing.photos)
+    return @photos
   end
 
 end

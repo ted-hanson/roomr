@@ -1,2 +1,16 @@
-<%= link_to "viewr", users_url %>
-<%= link_to "listr", listings_url %>
+<div id="user_content" class="main-content">
+  <div class="align-center user-room1">
+    <%= link_to(users_url) do %>
+      <%=  image_tag("roomr1.png", :border => 0) %>
+      <div>I need a room</div>
+    <% end %>
+  </div>
+  <div class="align-center user-room2">
+    <%= link_to(listings_url) do %>
+      <%=  image_tag("roomr2.png", :border => 0) %>
+      <div>I need a roommate</div>
+    <% end %>
+  </div>
+
+</div>
+
