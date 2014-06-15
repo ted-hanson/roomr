@@ -1,22 +1,18 @@
-<<<<<<< HEAD
+
 
 <div id="home_content" class="main-content">
   <div class="home-logo">
     <%= image_tag "main-logo@2x.png" %>
   </div>
   <div class="home-fbsignin">
-    <%= image_tag "facebook-logo@2x.png" %>
+    <div id="user-widget">
+ 
+    <a href="/auth/facebook", id: "sign_in">
+      <%= image_tag "facebook-logo@2x.png" %>
+    </a>
+
+</div>
   </div>
 </div>
-=======
-<h1>RooMr</h1>
-  
-<div id="user-widget">
-  <% if current_user %>
-    Welcome <strong><%= current_user.first_name %></strong>!
-    <%= link_to "Sign out", signout_path, id: "sign_out" %>
-  <% else %>
-    <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
-  <% end %>
-</div>
->>>>>>> db43522e277be31fecfbf0d39cc330799d27d02a
+
+
