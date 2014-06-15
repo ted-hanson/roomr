@@ -9,16 +9,16 @@ class ListingsController < ApplicationController
   end
 
   def new
-    puts "current user is:"
-    puts current_user
-    @listing = Listing.new({user_id: current_user.id})
-    puts "listing in new is:"
-    puts @listing
+    # puts "current user is:"
+    # puts current_user
+    # @listing = Listing.new({user_id: current_user.id})
+    # puts "listing in new is:"
+    # puts @listing
   end
   
   def create
-    puts "listings is:"
-    puts listing_params
+    # puts "listings is:"
+    # puts listing_params
 
     @listing = current_user.listings.build(listing_params)
     
@@ -35,9 +35,13 @@ class ListingsController < ApplicationController
   end
 
   def available
-    @user_responses = UserResponse.all(where #
-    @listings = Listing.where("user_id NOT IN (?)", current_user.id)
-    redirect_to @listings[(@listings.length*rand()).to_i]
+    # @user_responses = UserResponse.all(where #
+    # @listings = Listing.where("user_id NOT IN (?)", current_user.id)
+    # redirect_to @listings[(@listings.length*rand()).to_i]
+    # redirect_to @listings[(@listings.length*rand()).to_i]
+    @listings = Listing.all
+    @idx = (@listings.length*rand()).to_i
+    redirect_to @listings[@idx]
   end
   
   def show

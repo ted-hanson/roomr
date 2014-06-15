@@ -1,0 +1,3 @@
+class ListerResponsesController < ApplicationController
+
+end

@@ -1,0 +1,2 @@
+module ListerResponsesHelper
+end
