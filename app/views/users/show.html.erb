@@ -13,10 +13,10 @@
       <div><%= @user.interests -%></div>
     </div>
     <div class="show-user-actions">
-      <a href= 'mailto: <%= @user.email  -%>'><span>send them an email</span></a>
-      <a href= '/listings/declineuser'><span>send them a text message</span></a>
-      <a href= '/listings/fbchat'><span>video chat on facebook</span></a>
-      <a href= '/listings/fbchat'><span>pass on this one</span></a>
+      <a href= ><span class="icon"><%= image_tag "phone@2x.png" %></span><span>give them a call</span></a>
+      <a href= 'mailto: <%= @user.email  -%>'><span class="icon"><%= image_tag "mail@2x.png" %></span><span>send them an email</span></a>
+      <a href= '' class='action-video'><span class="icon"><%= image_tag "video@2x.png" %></span><span>video chat on facebook</span><div class="coming-soon">coming soon</div></a>
+      <a href= '' class='action-cancel'><span class="icon"><%= image_tag "cancel@2x.png" %></span><span>not interested</span></a>
     </div>
   </div>
   
