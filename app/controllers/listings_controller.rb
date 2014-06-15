@@ -66,6 +66,11 @@ class ListingsController < ApplicationController
   def interested
     # puts "interested params: "
     # puts params[:id]
+
+    user_response = UserResponse.create(response: true)
+    user_response.listing = Listing.find(params[:id].to_i)
+    user_response.user = User.find(current_user.id)
+    user_response.save
     
     redirect_to "/GetNextListing"
   end
@@ -73,6 +78,11 @@ class ListingsController < ApplicationController
   def notinterested
     # puts "notinterested params: "
     # puts params[:id]
+
+    user_response = UserResponse.create(response: false)
+    user_response.listing = Listing.find(params[:id].to_i)
+    user_response.user = User.find(current_user.id)
+    user_response.save
     
     redirect_to "/GetNextListing"
   end
