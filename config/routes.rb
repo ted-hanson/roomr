@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   match 'auth/failure', to: redirect('/'), via: [:get, :post]
   match 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :post]  
   get 'mylisting' => 'listings#mylisting'
+  get 'listings/interested' => 'listings#interested'
+  get 'listings/notinterested' => 'listings#notinterested'
   resources :listings
 
   resources :users

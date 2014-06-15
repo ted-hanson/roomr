@@ -23,5 +23,15 @@
   <span id='match-grade'>F</span>
 </div>
 <% end %>
-<div class=''>
+<div class=''>  
+  
+</div>
+<div class='interested-buttons'>
+  
+  <%= link_to :action =>'notinterested', :id =>@listing.id  do %>
+  <span>Not Interested</span>
+  <% end %>
+  <%= link_to :action =>'interested', :id =>@listing.id  do %>
+    <span>Interested</span>
+  <% end %>
 </div>

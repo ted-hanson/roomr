@@ -62,6 +62,20 @@ class ListingsController < ApplicationController
       render :action => 'edit'
     end
   end
+  
+  def interested
+    # puts "interested params: "
+    # puts params[:id]
+    
+    redirect_to "/GetNextListing"
+  end
+  
+  def notinterested
+    # puts "notinterested params: "
+    # puts params[:id]
+    
+    redirect_to "/GetNextListing"
+  end
 
   private
   def listing_params
