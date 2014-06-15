@@ -3,6 +3,7 @@ class WelcomeController < ApplicationController
     if current_user
       redirect_to '/WhereTo'
     end 
+    @body_class = "onepage"
   end
   private
   def current_user
