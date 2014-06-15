@@ -1,0 +1,14 @@
+<h1>All Users</h1>
+
+<% if @users.blank? %>
+<p>No users to display</p>
+
+<% else %>
+    <ul id="users">
+    <% @users.each do |user| %>
+    <li>
+       <%= link_to user.first_name + ' ' + user.last_name, :action =>'show', :id =>user.id  -%>
+    </li>
+    <% end %>
+</ul>
+<% end %>
