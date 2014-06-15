@@ -37,6 +37,7 @@
     <%= f.text_area :interests %>
   </p>
   <p class="frm-item align-center">
-    <%= f.submit "Submit", :class => "button" %>
+    <%= f.submit "Submit",:style => "display:none;",:id=>"btn_submit" %>
+    <a href="javascript:document.getElementById('btn_submit').click();" class="button">Submit</a>
   </p>
 <% end %>
