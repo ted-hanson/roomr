@@ -3,7 +3,6 @@
    License: none (public domain)
 */
 html {
-  height:100%;
   box-sizing:border-box;
 }
 html,body {
@@ -65,12 +64,19 @@ a {
   text-align:center;
 }
 body {
+  background: url('/assets/main-background-opacity@2x.png');
+}
+body.onepage {
   background: url('/assets/main-background@2x.png');
   background-size:100% 100%;
+}
+body.nav-open {
+  background:#e3e3e3;
 }
 .main-content {
   padding:0 17px 60px;
 }
+
 h1 {
   padding:15px 0 5px;
   font-size:17px;
