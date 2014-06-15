@@ -33,6 +33,12 @@ class ListingsController < ApplicationController
       redirect_to current_user.listings[0]
     end
   end
+
+  def available
+    @user_responses = UserResponse.all(where #
+    @listings = Listing.where("user_id NOT IN (?)", current_user.id)
+    redirect_to @listings[(@listings.length*rand()).to_i]
+  end
   
   def show
     @listing = Listing.find(params[:id])
