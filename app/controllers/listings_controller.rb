@@ -12,6 +12,10 @@ class ListingsController < ApplicationController
   def show
     @listing = Listing.find(params[:id])
   end
+  
+  def edit
+    @listing = Listing.find(params[:id])
+  end
 
   private
   def listing_params
