@@ -52,16 +52,19 @@ class ListingsController < ApplicationController
     # 1) NOT the user's own listing
     # and 2) NOT a listing this user has responded to
     @listings = Listing.where.not(id: @unavailable_listing_ids)
-    @idx = (@listings.length*rand()).to_i
-    
+
+    puts @listings    
+ 
     if @listings.length == 0
-      # hacky fallback incase can't find listing
-      puts "hacky fallback!"
-      @listings = Listing.all
-      @idx = (@listings.length*rand()).to_i
+      return redirect_to '/nolistings'
     end
     
+    @idx = (@listings.length*rand()).to_i
     redirect_to @listings[@idx]
+  end
+
+  def nolistings
+    
   end
   
   def show
