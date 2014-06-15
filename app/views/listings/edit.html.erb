@@ -1,53 +1,89 @@
-<h1>EDIT Your Listing!!!</h1>
+<div class="main-content">
+  <h1>EDIT Your Listing!!!</h1>
 
-<%= form_for @listing do |f| %>
-  <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </p>
- 
-  <p>
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </p>
-  
-  <p>
-    <%= f.label :neighborhood %><br>
-    <%= f.text_area :neighborhood %>
-  </p>
-  
-  <p>
-    <%= f.label :dateavailable_month %><br>
-    <%= f.text_area :dateavailable_month %>
-  </p>
-  <p>
-    <%= f.label :dateavailable_day %><br>
-    <%= f.text_area :dateavailable_day %>
-  </p>
-  <p>
-    <%= f.label :dateavailable_year %><br>
-    <%= f.text_area :dateavailable_year %>
-  </p>
-  <p>
-    <%= f.label :price %><br>
-    <%= f.text_area :price %>
-  </p>
+  <%= form_for @listing do |f| %>
+      <p class="frm-item">
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+      </p>
 
-  <p>
-    <%= f.label :numbedrooms %><br>
-    <%= f.text_area :numbedrooms %>
-  </p>
-  <p>
-    <%= f.label :numbathrooms %><br>
-    <%= f.text_area :numbathrooms %>
-  </p>
-  <p>
-    <%= f.label :photos %><br>
-    <%= f.text_area :photos %>
-  </p>
+    
+    <p class="frm-item">
+      <%= f.label :neighborhood, "district" %>
+      <%= f.select :neighborhood,["No Preference","alamo square / nopa",
+"bayview",
+"bernal heights",
+"castro / upper market",
+"cole valley / ashbury hts",
+"downtown / civic / van ness",
+"excelsior / outer mission",
+"financial district",
+"glen park",
+"haight ashbury",
+"hayes valley",
+"ingleside / SFSU / CCSF",
+"inner richmond",
+"inner sunset / UCSF",
+"laurel hts / presidio",
+"lower haight",
+"lower nob hill",
+"lower pac hts",
+"marina / cow hollow",
+"mission district",
+"nob hill",
+"noe valley",
+"north beach / telegraph hill",
+"pacific heights",
+"portola district",
+"potrero hill",
+"richmond / seacliff",
+"russian hill",
+"SOMA / south beach",
+"sunset / parkside",
+"tenderloin",
+"treasure island",
+"twin peaks / diamond hts",
+"USF / panhandle",
+"visitacion valley",
+"west portal / forest hill",
+"western addition"], {:selected=>"No Preference"} %>
+   </p>    
+    <div class="frm-col3 frm-item">
+      <div class="label">date available</div>
+      <p class="col">
+        <%= f.select :dateavailable_month, ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"], {:include_blank => true,:selected=>"Jun"} %>
+      </p>
+      <p class="col">
+        <%= f.select :dateavailable_day, [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31], {:include_blank => true,:selected=>"30"} %>
+      </p>
+      <p class="col">
+        <%= f.select :dateavailable_year, [2014], {:selected=>"2014"} %>
+      </p>
+    </div>
+    <p class="frm-item">
+      <%= f.label :price %><br>
+      <%= f.text_area :price %>
+    </p>
+    <p class="frm-item">
+      <%= f.label :numbedrooms, "number of rooms" %>
+      <%= f.select :numbedrooms, [1,2,3,4],{:selected=>"1"} %>
+    </p>
+    <p class="frm-item">
+      <%= f.label :numbathrooms, "number of bathrooms" %>
+      <%= f.select :numbathrooms, [1,2,3,4],{:selected=>"1"} %>
+    </p>
+    <p class="frm-item">
+      <%= f.label :description %><br>
+      <%= f.text_area :description %>
+    </p>
+    <p class="frm-item">
+      <%= f.label :photos %><br>
+      <%= f.text_area :photos %>
+    </p>
 
- 
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+   
+    <p>
+      <%= f.submit %>
+    </p>
+  <% end %>
+</div>
