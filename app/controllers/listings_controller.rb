@@ -20,6 +20,7 @@ class ListingsController < ApplicationController
 
   def show
     @listing = Listing.find(params[:id])
+    @photos = getImages
   end
   
   def edit
@@ -39,6 +40,12 @@ class ListingsController < ApplicationController
   private
   def listing_params
     params.require(:listing).permit!
+  end
+
+  def getImages
+    @photos = []
+    @photos.push(@listing.photos)
+    return @photos
   end
 
 end

@@ -1,3 +1,37 @@
 // Place all the styles related to the listings controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.title {
+	margin: 10px 15px;
+}
+
+.main-image img, .map img {
+	width: auto;
+}
+.thumbnails {
+	margin: 10px 15px;
+	.img-wrapper {
+		width: 100px;
+		margin: 10px;
+	}
+	.img-wrapper:first-child {
+		margin-left: 0px;
+	}
+}
+
+.neighborhood {
+	margin: 10px 15px;
+}
+
+.map {
+
+}
+
+.description {
+	margin: 20px 15px;
+}
+
+.match-grade-wrapper {
+	margin: 20px 15px;
+}
