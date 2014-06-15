@@ -11,7 +11,6 @@ class CreateListings < ActiveRecord::Migration
       t.integer :numbedrooms
       t.integer :numbathrooms
       t.text :photos
-      t.integer :user_id      
       t.references :user, index: true
 
       t.timestamps

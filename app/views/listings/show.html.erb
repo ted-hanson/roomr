@@ -19,9 +19,12 @@
 <div class='description'>
 	<%= content_tag(:div, @listing.description) %>
 </div>
+
+<% if current_user.id != @listing.user_id %>
 <div class='match-grade-wrapper'>
 	<span class='match-grade-label'>Match grade</span>
-	<span id='match-grade'>F</span>
+  <span id='match-grade'>F</span>
 </div>
+<% end %>
 <div class=''>
 </div>

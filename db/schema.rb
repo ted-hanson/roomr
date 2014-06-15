@@ -45,7 +45,6 @@ ActiveRecord::Schema.define(version: 20140614220447) do
     t.string   "interests"
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
-    t.integer  "listing_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
