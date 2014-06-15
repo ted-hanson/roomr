@@ -76,14 +76,14 @@ metroidListing = Listing.create([
 	{
 		title: "Bunker",
 		description: "Military cozy",
-		neighborhood: "Powership",
+		neighborhood: "Gunship",
 		dateavailable_month: time1.month,
 		dateavailable_day: time1.day,
 		dateavailable_year: time1.year,
 		numbedrooms: 1,
 		numbathrooms: 1,
 		price: 100000000000,
-		photos: "http://i.imgur.com/kqgJ525.jpg?1",
+		photos: "http://i.imgur.com/vIYlucZ.jpg",
 		user_id: 3
 	}
 ])
