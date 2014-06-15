@@ -39,34 +39,34 @@ class ListingsController < ApplicationController
     @unavailable_listing_ids = Array.new
     
     # listing ids this user has already responded to
-    UserResponse.where(user_id: current_user.id).each do |one_user_response|
-      @unavailable_listing_ids.push(one_user_response.listing_id)
+    UserResponse.where(user_id: current_user.id).each do |previous_response|
+      @unavailable_listing_ids.push(previous_response.listing_id)
     end
     
     # this users own listing(s)
-    User.find(current_user.id).listings.each do |one_listing|
-      @unavailable_listing_ids.push(one_listing.id)
+    User.find(current_user.id).listings.each do |posted_listing|
+      @unavailable_listing_ids.push(posted_listing.id)
     end
     
     # the next available listing is 
     # 1) NOT the user's own listing
     # and 2) NOT a listing this user has responded to
     @listings = Listing.where.not(id: @unavailable_listing_ids)
-    @idx = (@listings.length*rand()).to_i
     
     if @listings.length == 0
       # hacky fallback incase can't find listing
       puts "hacky fallback!"
       @listings = Listing.all
-      @idx = (@listings.length*rand()).to_i
     end
     
+    @idx = (@listings.length*rand()).to_i
     redirect_to @listings[@idx]
   end
   
   def show
     @listing = Listing.find(params[:id])
     @photos = getImages
+    @roomrs = [User.find(@listing.user_id)]
   end
   
   def edit
