@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 20140615062001) do
   create_table "listings", force: true do |t|
     t.string   "title"
     t.text     "description"
+    t.string   "latitude"
+    t.string   "longitude"
     t.text     "neighborhood"
     t.integer  "dateavailable_month"
     t.integer  "dateavailable_day"
@@ -34,6 +36,7 @@ ActiveRecord::Schema.define(version: 20140615062001) do
     t.integer  "numbedrooms"
     t.integer  "numbathrooms"
     t.text     "photos"
+    t.text     "match_grade"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
