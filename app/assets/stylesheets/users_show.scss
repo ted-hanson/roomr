@@ -1,0 +1,74 @@
+#show-user {
+  .show-user-top {
+    margin: 10px 10px 30px;
+    overflow: hidden;
+    img {
+      width: 70px;
+      float: left;
+      margin-right: 10px;
+    }
+    > a {
+      display: block;
+      overflow: hidden;
+    }
+    > a > div {
+      overflow: hidden;
+      .green-value {
+        color: #7EC346;
+      }
+      > div {
+        margin-bottom: 5px;
+      }
+    }
+  }
+  .show-user-description {
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 2px solid lightgray;
+  }
+  .show-user-actions {
+    a {
+      display: block;
+      width: 245px;
+      height: 40px;
+      margin-left: auto;
+      margin-right: auto;
+      -moz-border-radius: 3px; 
+      -webkit-border-radius: 3px;
+      border-radius: 3px; 
+      border: 1px solid #3E7CCF;
+      margin-bottom: 10px;
+      padding: 15px;
+      .icon {
+        position: relative;
+        top: 8px;
+      }
+      .icon img {
+        width: 26px;
+      }
+      .coming-soon {
+        text-align: center;
+        margin-left: 25px;
+        position: relative;
+        top: -7px;
+      }
+      > span:not(.icon) {
+        margin-left: 30px;
+      }
+      &.action-video {
+        border: 1px solid #aaa;
+        color: #aaa;
+        span:not(.icon) {
+          position: relative;
+          top: -7px;
+        }
+      }
+      &.action-cancel {
+        margin-top: 36px;
+        border: 1px solid #aaa;
+        color: #aaa;
+      }
+    }
+  }
+
+}
