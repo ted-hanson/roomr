@@ -10,6 +10,7 @@
 <body class="<%= @body_class %>">
   <% unless current_user.nil? %>
   <header>
+      <div id="menu_nav_button"></div>
       <a class="header-logo" href="/"><%= image_tag "header-logo@2x.png" %></a>
   </header>  
   <% end %> 

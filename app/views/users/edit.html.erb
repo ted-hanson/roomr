@@ -1,41 +1,43 @@
 <%= form_for @user do |f| %>
-  <p>
-    <%= f.label :first_name %><br>
+  <p class="frm-item">
+    <%= f.label :first_name %>
     <%= f.text_field :first_name %>
   </p>
-  <p>
-    <%= f.label :last_name %><br>
+  <p class="frm-item">
+    <%= f.label :last_name %>
     <%= f.text_field :last_name %>
   </p>
-  <p>
-    <%= f.label :email %><br>
+  <p class="frm-item">
+    <%= f.label :email %>
     <%= f.text_field :email %>
   </p>
-  <p>
-    <%= f.label :birthday_month %><br>
-    <%= f.text_field :birthday_month %>
-  </p>
-  <p>
-    <%= f.label :birthday_year %><br>
-    <%= f.text_field :birthday_year %>
-  </p>
-  <p>
-    <%= f.label :gender %><br>
+  <div class="frm-col2 frm-item">
+    <label>birth month &amp; year</label>
+    <div class="col">
+      <%= f.text_field :birthday_month %>
+    </div>
+    <div class="col">
+      <%= f.text_field :birthday_year %>
+    </div>
+  </div>
+  <p class="frm-item">
+    <%= f.label :gender, "gender preference" %>
     <%= f.text_field :gender %>
   </p>
-  <p>
-    <%= f.label :photo %><br>
+  <p class="frm-item">
+    <%= f.label :photo %>
     <%= f.text_field :photo %>
   </p>
-  <p>
-    <%= f.label :occupation %><br>
+  <p class="frm-item">
+    <%= f.label :occupation %>
     <%= f.text_field :occupation %>
   </p>
-  <p>
-    <%= f.label :interests %><br>
+  <p class="frm-item">
+    <%= f.label :interests,"little bit about yourself" %>
     <%= f.text_area :interests %>
   </p>
-  <p>
-    <%= f.submit %>
+  <p class="frm-item align-center">
+    <%= f.submit "Submit",:style => "display:none;",:id=>"btn_submit" %>
+    <a href="javascript:document.getElementById('btn_submit').click();" class="button">Submit</a>
   </p>
 <% end %>
