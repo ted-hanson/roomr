@@ -50,10 +50,10 @@
 </div>
 <% if current_user.id != @listing.user_id %>
 <div class='interested-buttons'>  
-  <%= link_to :action =>'notinterested', :id =>@listing.id  do %>
-  <span>Not Interested</span>
-  <% end %>
   <%= link_to :action =>'interested', :id =>@listing.id  do %>
-    <span>Interested</span>
+    <span class='interested call-to-action'>interested</span>
   <% end %>
+  <%= link_to :action =>'notinterested', :id =>@listing.id  do %>
+  	<span class='notinterested'>not interested</span>
+  <% end %>  
 <% end %>
