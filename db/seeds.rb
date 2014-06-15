@@ -5,3 +5,20 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+time1 = Time.new
+
+sampleListing = Listing.create([
+	{
+		title: "Bunker",
+		description: "Military cozy",
+		neighborhood: "Spaceship",
+		dateavailable_month: time1.month,
+		dateavailable_day: time1.day,
+		dateavailable_year: time1.year,
+		numbedrooms: 1,
+		numbathrooms: 0,
+		price: 100000000000,
+		photos: "http://trampt.com/images/products/000/019/203/Halo_Master_Chief-Funko-Pop_Vinyl-Funko-trampt-19203m.jpg?1321569370"
+	}
+])

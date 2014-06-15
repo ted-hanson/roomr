@@ -1,4 +1,13 @@
 class ListingsController < ApplicationController
+
+  def index
+    @listings = Listing.all
+      respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @listings }
+    end
+  end
+
   def new
   end
   

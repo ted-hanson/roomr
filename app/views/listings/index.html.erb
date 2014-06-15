@@ -1,0 +1,14 @@
+<h1>All Listings</h1>
+
+<% if @listings.blank? %>
+<p>No listings to display</p>
+
+<% else %>
+    <ul id="listings">
+    <% @listings.each do |list| %>
+    <li>
+       <%= link_to list.title, :action =>'show', :id =>list.id  -%>
+    </li>
+    <% end %>
+</ul>
+<% end %>
