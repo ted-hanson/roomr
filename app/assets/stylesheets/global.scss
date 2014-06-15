@@ -65,3 +65,31 @@ body {
   background-size:100% 100%;
   padding:0 0 60px;
 }
+label,div.label {
+  text-transform:lowercase;
+  display:block;
+  padding:7px 0 2px;
+  position:relatve;
+  color:#989898
+}
+input {
+  padding:12px;
+  width:100%;
+  box-sizing:border-box;
+  border:1px solid #aeaeae;
+  border-radius:3px;
+  -moz-box-shadow:inset 0 0 5px rgba(0,0,0,.3);
+  -webkit-box-shadow:inset 0 0 5px rgba(0,0,0,.3);
+  box-shadow:inset 0 0 5px rgba(0,0,0,.3);
+}
+.frm-item {
+  padding:5px 17px 0; 
+  position:relative;
+}
+.button {
+  background:#3f7ad6;
+  border-radius:5px;
+  color:white;
+  width:100%;
+  text-align:center;  
+}
