@@ -8,9 +8,14 @@ class ListingsController < ApplicationController
     @listing.save
     redirect_to @listing
   end
-  
+
+  def show
+    @listing = Listing.find(params[:id])
+  end
+
   private
-    def listing_params
-      params.require(:listing).permit!
-    end
+  def listing_params
+    params.require(:listing).permit!
+  end
+
 end
