@@ -11,7 +11,10 @@
 </div>
 <div class='map'>
 	<div class='neighborhood'><%= @listing.neighborhood %></div>
-	<%= image_tag("http://fc02.deviantart.net/fs70/i/2013/111/f/5/halo_reach_wallpaper_by_aro_by_aroart-d62gx5e.jpg") %>
+	<div>
+	<%= content_tag("iframe", "", width: "100%", height: "200", frameborder: "0", style: "border:0", src: "https://www.google.com/maps/embed/v1/search?key=AIzaSyA8JSgaF2Y7HhHhCHS5IOIzDItv93BGxyE&q=" + @listing.neighborhood)
+	%>
+	</div>
 </div>
 <div class='description'>
 	<%= content_tag(:div, @listing.description) %>
