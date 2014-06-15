@@ -16,7 +16,14 @@
 	}
 }
 
-.main-image img, .map img {
+.main-image {
+	height: 200px;
+	overflow: hidden;
+}
+.main-image img {
+	width: 100%;
+}
+.map img {
 	width: auto;
 }
 .gallery {
@@ -51,4 +58,43 @@
 
 .match-grade-wrapper {
 	margin: 20px;
+}
+.roomr {
+	overflow: hidden;
+}
+.roomr-profile {
+	width: 100px;
+	height: 100px;
+	overflow: hidden;
+	border-radius: 50%;
+	border: 1px solid #ccc;
+	display: inline-block;
+	margin: 10px 20px;
+	float: left;
+	img {
+		width: 100%;
+	}
+}
+.roomr-details {
+	margin: 20px;
+}
+
+.interested-buttons {
+	> * {
+		margin: 10px 20px;
+		display: block;
+		text-align: center;
+	}
+	span {
+		display: block;
+		padding: 20px 20px;
+	}
+	.notinterested {
+		color: #999;
+	}
+	.call-to-action {
+		background: rgb(109, 186, 54);
+		border-radius: 5px;
+		color: white;
+	}
 }
