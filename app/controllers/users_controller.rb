@@ -28,7 +28,8 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
-      redirect_to :action => 'show', :id => @user
+      #redirect_to :action => 'show', :id => @user
+      redirect_to '/WhereTo'
     else
       @user = User.find(params[:id])
       render :action => 'edit'

@@ -1,7 +1,8 @@
 class WelcomeController < ApplicationController
   def index
     if current_user
-      redirect_to '/WhereTo'
+      # redirect_to '/WhereTo'
+      redirect_to :controller=> 'users', :action => 'edit', :id => current_user.id
     end 
     @body_class = "onepage"
   end
