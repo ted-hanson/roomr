@@ -14,9 +14,14 @@
 ActiveRecord::Schema.define(version: 20140615062001) do
 
   create_table "lister_responses", force: true do |t|
+    t.integer  "user_response_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "lister_responses", ["user_id"], name: "index_lister_responses_on_user_id"
+  add_index "lister_responses", ["user_response_id"], name: "index_lister_responses_on_user_response_id"
 
   create_table "listings", force: true do |t|
     t.string   "title"

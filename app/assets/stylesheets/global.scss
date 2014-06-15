@@ -2,6 +2,10 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+html {
+  height:100%;
+  box-sizing:border-box;
+}
 html,body {
   position:relative;
   width:100%;
@@ -63,10 +67,9 @@ a {
 body {
   background: url('/assets/main-background@2x.png');
   background-size:100% 100%;
-  padding:0 0 60px;
 }
 .main-content {
-  padding:0 17px;
+  padding:0 17px 60px;
 }
 h1 {
   padding:15px 0 5px;
