@@ -75,7 +75,41 @@
     </p>
     <p class="frm-item">
       <%= f.label :photos %>
-      <%= f.text_area :photos %>
+      <div class='add-image-button'>add image</div>
+      <style>
+      .add-image-button {
+        display: block;
+        padding: 10px;
+        text-align: center;
+        border: 1px solid #3E7CCF;
+        color: #3E7CCF;
+      }
+      .add-image-previews {
+        margin-top: 15px;
+      }
+      .add-image-previews img {
+        width: 80px;
+        margin-right: 10px;
+      }
+      </style>
+      <div class='add-image-previews'></div>
+      <script>
+      $(".add-image-button").click(function() {
+        var imgs = [
+          "http://i.imgur.com/VTApdhw.jpg",
+          "http://i.imgur.com/QCCVvXT.png",
+          "http://i.imgur.com/bYszsNc.png",
+          "http://i.imgur.com/3HAue9B.png",
+          "http://i.imgur.com/HtKFgnS.png",
+          "http://i.imgur.com/H6GangX.png"
+        ];
+        var imgsrc = imgs[Math.floor(Math.random()*imgs.length)];
+        
+        // var imgsrc = "http://i.imgur.com/VTApdhw.jpg";
+        $(".add-image-previews").append("<img src='" + imgsrc + "'>")
+      });
+      </script>
+
     </p>
     <p class="frm-item">
       <%= f.submit "Submit",:style => "display:none;",:id=>"btn_submit" %>
