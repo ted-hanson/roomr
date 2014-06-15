@@ -68,11 +68,12 @@ body {
 label,div.label {
   text-transform:lowercase;
   display:block;
-  padding:7px 0 2px;
+  padding:7px 0 3px;
   position:relatve;
-  color:#989898
+  color:#989898;
+  font-size:15px;
 }
-input {
+input[type=text] {
   padding:12px;
   width:100%;
   box-sizing:border-box;
@@ -91,5 +92,20 @@ input {
   border-radius:5px;
   color:white;
   width:100%;
-  text-align:center;  
+  text-align:center; 
+  padding:12px 0;
+  margin:10px 0 0 0;
+  border:0;
+  font-size:17px;
+  display:block;
+  &:after {
+    content: ' ';
+    display:inline-block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 7px 0 7px 7px;
+    border-color: transparent transparent transparent #ffffff;
+    margin: 3px 0 0 7px;
+  }
 }
