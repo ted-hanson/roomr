@@ -1,45 +1,23 @@
 <div class="main-content">
-  <%= form_for @user do |f| %>
-    <p class="frm-item">
-      <%= f.label :first_name %>
-      <%= f.text_field :first_name %>
-    </p>
-    <p class="frm-item">
-      <%= f.label :last_name %>
-      <%= f.text_field :last_name %>
-    </p>
-    <p class="frm-item">
-      <%= f.label :email %>
-      <%= f.text_field :email %>
-    </p>
-    <div class="frm-col2 frm-item">
-      <label>birth month &amp; year</label>
-      <div class="col">
-        <%= f.text_field :birthday_month %>
-      </div>
-      <div class="col">
-        <%= f.text_field :birthday_year %>
+  <div id="show-user">
+    <div class="show-user-top">
+      <%= image_tag(@user.photo)%>
+      <div>
+      <div><%= @user.first_name -%> <%= @user.last_name -%></div>
+      <div>occupation <span class="green-value"><%= @user.occupation-%></span></div>
+      <div>match grade <span class="green-value">A-</span></div>
       </div>
     </div>
-    <p class="frm-item">
-      <%= f.label :gender, "gender preference" %>
-      <%= f.text_field :gender %>
-    </p>
-    <p class="frm-item">
-      <%= f.label :photo %>
-      <%= f.text_field :photo %>
-    </p>
-    <p class="frm-item">
-      <%= f.label :occupation %>
-      <%= f.text_field :occupation %>
-    </p>
-    <p class="frm-item">
-      <%= f.label :interests,"little bit about yourself" %>
-      <%= f.text_area :interests %>
-    </p>
-    <p class="frm-item align-center">
-      <%= f.submit "Submit",:style => "display:none;",:id=>"btn_submit" %>
-      <a href="javascript:document.getElementById('btn_submit').click();" class="button">Submit</a>
-    </p>
-  <% end %>
+    <div class="show-user-description">
+      <div style="color:#A8A8A8;font-size:18px;margin-bottom:5px;">description</div>
+      <div><%= @user.interests -%></div>
+    </div>
+    <div class="show-user-actions">
+      <a href= 'mailto: <%= @user.email  -%>'><span>send them an email</span></a>
+      <a href= '/listings/declineuser'><span>send them a text message</span></a>
+      <a href= '/listings/fbchat'><span>video chat on facebook</span></a>
+      <a href= '/listings/fbchat'><span>pass on this one</span></a>
+    </div>
+  </div>
+  
 </div>
