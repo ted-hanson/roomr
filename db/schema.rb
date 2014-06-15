@@ -11,7 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140614204312) do
+ActiveRecord::Schema.define(version: 20140614235720) do
+
+  create_table "listings", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.text     "neighborhood"
+    t.integer  "dateavailable_month"
+    t.integer  "dateavailable_day"
+    t.integer  "dateavailable_year"
+    t.integer  "price"
+    t.integer  "numbedrooms"
+    t.integer  "numbathrooms"
+    t.text     "photos"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_types", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "provider"
@@ -19,6 +39,12 @@ ActiveRecord::Schema.define(version: 20140614204312) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "email"
+    t.integer  "birthday_month"
+    t.integer  "birthday_year"
+    t.string   "gender"
+    t.string   "photo"
+    t.string   "occupation"
+    t.string   "interests"
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
     t.datetime "created_at"
