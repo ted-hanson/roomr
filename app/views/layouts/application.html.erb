@@ -10,9 +10,18 @@
 <body class="<%= @body_class %>">
   <% unless current_user.nil? %>
   <header>
-      <div id="menu_nav_button"></div>
+      <div id="menu_nav_button"><div></div></div>
       <a class="header-logo" href="/"><%= image_tag "header-logo@2x.png" %></a>
-  </header>  
+  </header>
+  <div class="navigation" id="nav">
+    <a href="/listings/view_searchers">matches</a>
+    <%= link_to 'edit profile', :controller=>"users", :action =>'edit', :id =>current_user.id %>
+
+    <a href="javascript:;">edit listing</a>
+    <a href="javascript:;">edit interested</a>
+    <a href="javascript:;">switch to viewer</a>
+    <a class="link-logout" href="javascript:;">log out</a>
+  </div> 
   <% end %> 
 
   <%= yield %>

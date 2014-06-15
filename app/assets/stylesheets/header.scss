@@ -1,8 +1,8 @@
 header {
   height:55px;
-  background:#eeeef0;
   position:relative;
-
+  background:#e2e4e3;
+  border-bottom:1px solid #d3d3d3;
 }
 .header-logo {
   position:absolute;
@@ -11,13 +11,40 @@ header {
   margin:-14px 0 0 -35px;
 }
 #menu_nav_button {
-  background: url('/assets/3bar@2x.png');
-  background-size:100% 100%;
-  width:20px;
-  height:15px;
-  display:inline-block;
+  width:60px;
+  height:100%;
   position:absolute;
-  top:50%;
-  left:15px;
-  margin:-7px 0 0 0;
+  top:0;
+  left:0;
+  > div {
+   background: url('/assets/3bar@2x.png');
+    background-size:100% 100%;
+    width:20px;
+    height:15px;
+    display:inline-block;
+    position:absolute;
+    top:50%;
+    left:15px;
+    margin:-7px 0 0 0; 
+  }
+
+}
+.navigation {
+  background:#e3e3e3;
+  position:absolute;
+  top:56px;
+  bottom:0;
+  width:100%;
+  box-sizing:border-box;
+  display:none;
+}
+.navigation a {
+  display:block;
+  padding:20px 10px 20px 30px;
+  color:#343434;
+  font-size:18px;
+}
+.link-logout {
+  border-top:1px solid #d3d3d3;
+  margin:20px 0 0 0;
 }
