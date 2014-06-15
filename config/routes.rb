@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   resources :listings
 
   resources :users
+  
+  get 'WhereTo' => 'usertypes#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
