@@ -10,13 +10,58 @@
 </div>
 <div class='gallery'>
 	<div class='main-image'>
-		<div class='img-wrapper'><%= image_tag(@photos[0])%></div>
+		<div class='img-wrapper'>
+		  <script>
+		  var imgs = [
+        "http://i.imgur.com/MDy6eqe.png",
+        "http://i.imgur.com/gfM3U6d.jpg",
+        "http://i.imgur.com/wka2fwy.jpg",
+        "http://i.imgur.com/y5BLHrs.png",
+        "http://i.imgur.com/QslbXzl.jpg",
+        "http://i.imgur.com/SAuTcEX.jpg",
+        "http://i.imgur.com/KGNjFUl.jpg"
+      ];
+      var imgsrc = imgs[Math.floor(Math.random()*imgs.length)];
+
+      // var imgsrc = "http://i.imgur.com/VTApdhw.jpg";
+      $(".img-wrapper img").remove();
+      $(".img-wrapper").append("<img src='" + imgsrc + "'>");
+      </script>
+		  </div>
+		  <div class="thumbnails">
+		    <style>
+		    .thumbnails img {
+		      width: 80px;
+		      margin: 10px 10px 10px 0;
+		    }
+		    </style>
+		    <script>
+			  function makethumbnail() {
+        //$(".add-image-button").click(function() {
+          var imgs = [
+            "http://i.imgur.com/VTApdhw.jpg",
+            "http://i.imgur.com/QCCVvXT.png",
+            "http://i.imgur.com/bYszsNc.png",
+            "http://i.imgur.com/3HAue9B.png",
+            "http://i.imgur.com/HtKFgnS.png",
+            "http://i.imgur.com/H6GangX.png"
+          ];
+          var imgsrc = imgs[Math.floor(Math.random()*imgs.length)];
+
+          // var imgsrc = "http://i.imgur.com/VTApdhw.jpg";
+          $(".thumbnails").append("<img src='" + imgsrc + "'>")
+        //});
+        }
+        makethumbnail();
+        makethumbnail();
+        makethumbnail();
+        makethumbnail();        
+        makethumbnail();
+        </script>
+		  
+		</div>
 	</div>
-	<div class='thumbnails'>
-		<% @photos.each do |image_uri| %>
-			<div class='img-wrapper'><%= image_tag(image_uri)%></div>
-		<% end %>
-	</div>
+
 </div>
 <div class='map'>
 	<div class='map-label'>map</div>
@@ -39,8 +84,29 @@
 	<% @roomrs.each do |roomr| %>
 		<div class='roomr'>
 			<div class='roomr-profile img-wrapper'>
-				<%= image_tag(roomr.photo)%>
+				<script>
+        //$(".add-image-button").click(function() {
+          var imgs = [
+          "http://i.imgur.com/YDTC6Wy.png",
+          "http://i.imgur.com/mW7uZvB.png",
+          "http://i.imgur.com/ZKesFlt.png",
+          "http://i.imgur.com/KaxHOzo.png",
+          "http://i.imgur.com/Ep5DbKQ.png",
+          "http://i.imgur.com/OBxy9dd.png",
+          "http://i.imgur.com/IkW3z97.png",
+          "http://i.imgur.com/mFpfkqj.png",
+          "http://i.imgur.com/58oLiGX.png",
+          "http://i.imgur.com/tPUyGqS.png"
+          ];
+          var imgsrc = imgs[Math.floor(Math.random()*imgs.length)];
+
+          // var imgsrc = "http://i.imgur.com/VTApdhw.jpg";
+          $(".roomr-profile img").remove();
+          $(".roomr-profile").append("<img src='" + imgsrc + "'>");
+        //});
+        </script>
 			</div>
+
 			<div class='roomr-details'>
 				<div class='roomr-name'><%= roomr.first_name + " " + roomr.last_name %></div>
 				<div class='roomr-description'><%= roomr.interests %></div>
