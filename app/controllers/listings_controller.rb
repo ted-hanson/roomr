@@ -66,6 +66,7 @@ class ListingsController < ApplicationController
   def show
     @listing = Listing.find(params[:id])
     @photos = getImages
+    @roomrs = [User.find(@listing.user_id)]
   end
   
   def edit

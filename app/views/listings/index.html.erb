@@ -8,6 +8,7 @@
     <% @listings.each do |list| %>
     <li>
        <%= link_to list.title, :action =>'show', :id =>list.id  -%>
+       <div><%= list.attributes%></div>
     </li>
     <% end %>
 </ul>

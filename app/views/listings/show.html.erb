@@ -1,4 +1,13 @@
-<div class='title'><%= @listing.title %></div>
+<div class='listing-header'>
+	<div class='title'>
+		<div><%= @listing.title %></div>
+		<div class='neighborhood'><%= @listing.neighborhood %></div>
+	</div>
+	<div class='price'>
+		<div class='price-dollars'>$<%= @listing.price %></div>
+		<div class='price-per-unit'>month</div>
+	</div>
+</div>
 <div class='gallery'>
 	<div class='main-image'>
 		<div class='img-wrapper'><%= image_tag(@photos[0])%></div>
@@ -10,21 +19,36 @@
 	</div>
 </div>
 <div class='map'>
-	<div class='neighborhood'><%= @listing.neighborhood %></div>
+	<div class='map-label'>map</div>
 	<div>
 	<%= content_tag("iframe", "", width: "100%", height: "200", frameborder: "0", style: "border:0", src: "https://www.google.com/maps/embed/v1/search?key=AIzaSyA8JSgaF2Y7HhHhCHS5IOIzDItv93BGxyE&q=" + @listing.neighborhood)
 	%>
 	</div>
 </div>
 <div class='description'>
+	<div class='description-label'>description</div>
 	<%= content_tag(:div, @listing.description) %>
 </div>
-
 <% if current_user.id != @listing.user_id %>
 <div class='match-grade-wrapper'>
 	<span class='match-grade-label'>Match grade</span>
   <span id='match-grade'>F</span>
 </div>
+<% end %>
+<div class='about-us-roomrs'>
+	<% @roomrs.each do |roomr| %>
+		<div class='roomr'>
+			<div class='roomr-profile img-wrapper'>
+				<%= image_tag(roomr.photo)%>
+			</div>
+			<div class='roomr-details'>
+				<div class='roomr-name'><%= roomr.first_name + " " + roomr.last_name %></div>
+				<div class='roomr-description'><%= roomr.interests %></div>
+			</div>
+		</div>
+	<% end %>
+</div>
+<% if current_user.id != @listing.user_id %>
 <div class='interested-buttons'>  
   <%= link_to :action =>'notinterested', :id =>@listing.id  do %>
   <span>Not Interested</span>
@@ -32,5 +56,4 @@
   <%= link_to :action =>'interested', :id =>@listing.id  do %>
     <span>Interested</span>
   <% end %>
-</div>
 <% end %>

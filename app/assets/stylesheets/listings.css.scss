@@ -2,12 +2,26 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.title {
-	margin: 10px 15px;
+.listing-header {
+	overflow: hidden;
+	.title {
+		display: inline-block;
+		float: left;
+		margin: 10px 15px;
+	}
+	.price {
+		display: inline-block;
+		float: right;
+		margin: 10px 15px;
+	}
 }
 
 .main-image img, .map img {
 	width: auto;
+}
+.gallery {
+	overflow: hidden;
+	margin-bottom: 10px;
 }
 .thumbnails {
 	margin: 10px 15px;
@@ -20,18 +34,21 @@
 	}
 }
 
-.neighborhood {
-	margin: 10px 15px;
+.map-label {
+	margin: 10px 20px;
 }
 
 .map {
-
+	overflow: hidden;
 }
 
+.description-label {
+	margin: 20px 0px;
+}
 .description {
-	margin: 20px 15px;
+	margin: 20px;
 }
 
 .match-grade-wrapper {
-	margin: 20px 15px;
+	margin: 20px;
 }
